@@ -3,8 +3,6 @@ package com.example.testdifferencesutilities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,16 +17,11 @@ public class NowActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now);
 
+        this.btn = this.findViewById(R.id.btn);
 
-        this.btn = new Button(this);
         this.btn.setOnClickListener(this);
         this.updateTime();
 
-    }
-
-    @Override
-    public void onClick(View view) {
-        this.updateTime();
     }
 
 
@@ -36,4 +29,8 @@ public class NowActivity extends AppCompatActivity implements View.OnClickListen
         this.btn.setText(new Date().toString());
     }
 
+    @Override
+    public void onClick(View view) {
+        this.updateTime();
+    }
 }
